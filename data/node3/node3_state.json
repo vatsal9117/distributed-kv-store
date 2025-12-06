@@ -1,0 +1,501 @@
+{
+  "current_term": 1,
+  "voted_for": "node2",
+  "log": [
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w0_k0",
+        "value": "data_787"
+      },
+      "index": 1
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w1_k0",
+        "value": "data_719"
+      },
+      "index": 2
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w2_k0",
+        "value": "data_908"
+      },
+      "index": 3
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w3_k0",
+        "value": "data_76"
+      },
+      "index": 4
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w3_k1",
+        "value": "data_128"
+      },
+      "index": 5
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w5_k0",
+        "value": "data_523"
+      },
+      "index": 6
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w6_k0",
+        "value": "data_443"
+      },
+      "index": 7
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w6_k1",
+        "value": "data_521"
+      },
+      "index": 8
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w8_k0",
+        "value": "data_689"
+      },
+      "index": 9
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w8_k1",
+        "value": "data_861"
+      },
+      "index": 10
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w0_k1",
+        "value": "data_328"
+      },
+      "index": 11
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w1_k1",
+        "value": "data_603"
+      },
+      "index": 12
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w2_k1",
+        "value": "data_410"
+      },
+      "index": 13
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w4_k0",
+        "value": "data_926"
+      },
+      "index": 14
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w3_k2",
+        "value": "data_249"
+      },
+      "index": 15
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w5_k1",
+        "value": "data_936"
+      },
+      "index": 16
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w7_k0",
+        "value": "data_707"
+      },
+      "index": 17
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w6_k2",
+        "value": "data_116"
+      },
+      "index": 18
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w6_k3",
+        "value": "data_812"
+      },
+      "index": 19
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w6_k4",
+        "value": "data_593"
+      },
+      "index": 20
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w8_k2",
+        "value": "data_306"
+      },
+      "index": 21
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w8_k3",
+        "value": "data_360"
+      },
+      "index": 22
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w1_k2",
+        "value": "data_796"
+      },
+      "index": 23
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w1_k3",
+        "value": "data_934"
+      },
+      "index": 24
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w4_k1",
+        "value": "data_288"
+      },
+      "index": 25
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w3_k3",
+        "value": "data_549"
+      },
+      "index": 26
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w5_k2",
+        "value": "data_322"
+      },
+      "index": 27
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w7_k1",
+        "value": "data_560"
+      },
+      "index": 28
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w9_k0",
+        "value": "data_723"
+      },
+      "index": 29
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w6_k5",
+        "value": "data_722"
+      },
+      "index": 30
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w0_k2",
+        "value": "data_357"
+      },
+      "index": 31
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w8_k4",
+        "value": "data_637"
+      },
+      "index": 32
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w2_k2",
+        "value": "data_121"
+      },
+      "index": 33
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w1_k4",
+        "value": "data_235"
+      },
+      "index": 34
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w4_k2",
+        "value": "data_233"
+      },
+      "index": 35
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w4_k3",
+        "value": "data_284"
+      },
+      "index": 36
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w4_k4",
+        "value": "data_255"
+      },
+      "index": 37
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w7_k2",
+        "value": "data_872"
+      },
+      "index": 38
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w7_k3",
+        "value": "data_131"
+      },
+      "index": 39
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w6_k6",
+        "value": "data_823"
+      },
+      "index": 40
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w0_k3",
+        "value": "data_738"
+      },
+      "index": 41
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w0_k4",
+        "value": "data_550"
+      },
+      "index": 42
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w2_k3",
+        "value": "data_339"
+      },
+      "index": 43
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w1_k5",
+        "value": "data_846"
+      },
+      "index": 44
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w1_k6",
+        "value": "data_584"
+      },
+      "index": 45
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w5_k3",
+        "value": "data_394"
+      },
+      "index": 46
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w4_k5",
+        "value": "data_41"
+      },
+      "index": 47
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w9_k1",
+        "value": "data_155"
+      },
+      "index": 48
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w7_k4",
+        "value": "data_634"
+      },
+      "index": 49
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w7_k5",
+        "value": "data_841"
+      },
+      "index": 50
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w8_k5",
+        "value": "data_432"
+      },
+      "index": 51
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w8_k6",
+        "value": "data_361"
+      },
+      "index": 52
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w2_k4",
+        "value": "data_936"
+      },
+      "index": 53
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w3_k4",
+        "value": "data_442"
+      },
+      "index": 54
+    },
+    {
+      "term": 1,
+      "command": {
+        "type": "set",
+        "key": "w1_k7",
+        "value": "data_519"
+      },
+      "index": 55
+    }
+  ]
+}
