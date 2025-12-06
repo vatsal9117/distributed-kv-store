@@ -1,171 +1,164 @@
-# Distributed Key-Value Store with Raft Consensus
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.8%2B-blue.svg" alt="Python 3.8+"/>
-  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License"/>
-  <img src="https://img.shields.io/badge/Consensus-Raft-orange.svg" alt="Raft"/>
-  <img src="https://img.shields.io/badge/Status-Production%20Ready-brightgreen" alt="Production Ready"/>
-</p>
-
-<p align="center">
-  <b>Built with love by Vatsal</b><br>
-  <sub>A production-grade, strongly consistent distributed key-value store implementing the full Raft consensus algorithm — in pure Python, zero external dependencies.</sub>
-</p>
-
----
+Distributed Key-Value Store (Python • Raft Consensus)
+<p align="center"> <img src="https://img.shields.io/badge/Consensus-Raft-orange?style=for-the-badge" /> <img src="https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge" /> <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" /> </p> <p align="center"> A strongly-consistent, fault-tolerant distributed key-value store implementing the full Raft consensus algorithm in pure Python — including leader election, log replication, snapshots, persistence, and automatic fault recovery. </p>
 
 ## Features
+Core Distributed Systems Functionality
 
-| Feature                        | Description                                                                 |
-|-------------------------------|-----------------------------------------------------------------------------|
-| **Full Raft Implementation**  | Leader election, log replication, commit rules, safety guarantees           |
-| **Strong Consistency**        | Linearizable reads/writes (`getl`, `put`, `delete`)                         |
-| **Fault Tolerance**           | Survives `(N-1)/2` crashes; automatic leader election and recovery         |
-| **Persistence & Crash Recovery** | WAL + snapshots; data survives restarts                                  |
-| **Log Compaction**            | Automatic snapshotting to prevent unbounded log growth                     |
-| **Dynamic Membership**        | Add/remove nodes at runtime (cluster reconfiguration)                      |
-| **Zero Dependencies**         | Pure Python standard library only                                           |
-| **Thread-Safe Design**        | Re-entrant locks prevent deadlocks under high concurrency                  |
-| **Comprehensive Testing**     | Unit, integration, chaos engineering, and performance benchmarks           |
+Full Raft Consensus — Leader election, log replication, safety
+Linearizable Writes & Reads
+Persistent Write-Ahead Log (WAL)
+Fault-Tolerant — Survives up to ⌊N/2⌋ failures
+Automatic Node Recovery
+Snapshotting & Log Compaction
+Thread-Safe Internals (RLock)
 
----
+## Developer Experience
+
+Integrated test & benchmark suite
+Built-in cluster metrics
+Simple CLI for put/get/delete
+Zero external dependencies (pure Python)
+
+## Installation
+
+Clone the repository:
+
+git clone https://github.com/<YOUR_USERNAME>/<REPO_NAME>.git
+cd <REPO_NAME>
+
+
+No dependencies required beyond Python 3.8+.
 
 ## Quick Start
-
-### Start a 3-Node Cluster
-
-```bash
+Start a 3-node local cluster
 python enhanced_distributed_node.py 1
 python enhanced_distributed_node.py 2
 python enhanced_distributed_node.py 3
-Interact (CLI)
-Bashnode1> put username alice
-Result: Success
 
-node1> getl username        # Linearizable read (always fresh)
-Result: alice
+Write and Read
+# On leader
+put user:1 "Alice"
 
-node2> get username         # Fast local read (any node)
-Result: alice
+# On any node
+get user:1
+getl user:1     # linearizable read
 
-File Structure
-textdistributed-kv-store/
-├── enhanced_distributed_node.py   # Main entry point
-├── enhanced_raft_node.py          # Core Raft + state machine
-├── raft_rpc.py                    # Network layer
-├── benchmark_and_test.py          # Ultimate test suite + benchmark
-├── full_lifecycle_test.py         # End-to-end verification
-├── test_suite.py                  # Legacy tests
-├── data/                          # Persistent storage
-└── README.md
+Other commands
+delete <key>
+status
+metrics
+quit
 
-Testing & Benchmarking
-Bashpython benchmark_and_test.py
-Runs unit tests, chaos (kills, partitions, crashes), and performance benchmark.
-Latest Result (3-node localhost):
+🏗 Architecture
+High-Level Overview
+Client → Leader → Followers
+           │          │
+           └─────Replicate Log Entries──────┘
 
-Throughput: ~352 writes/sec
-Success Rate: 100%
-Time: 1.42s for 500 concurrent writes
+Internal Node Architecture
+┌──────────────────────────────────────────────┐
+│ DistributedNode                               │
+│  ├── RaftNode (state machine + WAL + term)    │
+│  ├── RPC server & client                      │
+│  ├── Heartbeat loop                           │
+│  ├── Election timer                           │
+│  └── Snapshot manager                          │
+└──────────────────────────────────────────────┘
 
+📚 File Structure
+.
+├── benchmark_and_test.py        # Stress tests + benchmarks
+├── full_lifecycle_test.py       # End-to-end cluster test
+├── enhanced_distributed_node.py # Node executable
+├── enhanced_raft_node.py        # Core Raft implementation
+├── raft_rpc.py                  # RPC layer
+├── test_suite.py                # Unit tests
+└── data/                        # WAL + snapshots
 
-Performance
+⚙ Configuration
 
+Election timeouts tuned for localhost:
 
+self.election_timeout = random.uniform(1.5, 3.0)
 
 
+For real networks:
 
+self.election_timeout = random.uniform(0.15, 0.30)
 
+📊 Benchmark Results
 
+From benchmark_and_test.py:
 
+Metric	Value
+Throughput	~352 ops/sec
+Concurrency	10 threads
+Writes Tested	500
+Success Rate	100%
+Snapshot Speed	<100ms
+🧪 Testing
 
+Run the complete validation suite:
 
+python benchmark_and_test.py
 
 
+Includes:
 
+✔ Unit tests
 
+✔ Recovery tests
 
+✔ Random failure injection
 
+✔ Network partition simulation
 
+✔ Performance benchmarks
 
+Monitoring
+metrics
 
 
+Example output:
 
+{
+  "node_id": "node1",
+  "state": "leader",
+  "term": 17,
+  "log_entries": 1234,
+  "committed_entries": 1234,
+  "snapshot_index": 900,
+  "kv_pairs": 48
+}
 
+## Troubleshooting
+"No leader elected"
 
+Increase election timeout or check if nodes are overloaded.
 
+Writes not replicating
 
+Ensure majority of nodes are reachable.
 
+Slow performance
 
+Increase heartbeat frequency
 
-
-
-OperationLatency (LAN)ThroughputWrite5–15 ms500–2000 ops/sRead (fast)< 1 ms10,000+ ops/sRead (linearizable)5–15 ms500–1500 ops/sLeader Failover300–800 ms—
-
-Configuration (Local Testing Recommended)
-Python# enhanced_raft_node.py
-self.election_timeout = random.uniform(1.5, 3.0)  # Prevents election storms locally
-self.heartbeat_interval = 0.5
-self.snapshot_interval = 100
-
-CLI Commands
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-CommandDescriptionLeader Only?put k vWriteYesget kFast read (any node)Nogetl kLinearizable readYesdelete kDeleteYesstatusNode stateNoadd id host portAdd nodeYesremove idRemove nodeYes
+Reduce snapshot interval
 
 Contributing
 
-Fork → Create branch → Commit → Push → PR
-All changes must pass python benchmark_and_test.py
-
+Contributions welcome!
+Feel free to open issues & pull requests.
 
 License
-MIT License — free to use, modify, and distribute.
 
+MIT License — free to use and modify.
 
-  A deep dive into distributed systems — built for learning, correctness, and resilience.
+🎓 References
 
-```
+Raft Paper (Ongaro & Ousterhout)
+
+MIT 6.824 — Distributed Systems
+
+etcd & Consul architecture references
