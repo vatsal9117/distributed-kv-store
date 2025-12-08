@@ -1012,81 +1012,88 @@ success, msg = node.add_node("node4", "192.168.1.100", 5004)
 
 Remove a node from the cluster.
 
-**Parameters**:
-- `node_id`: Identifier of node to remove
-Returns:
-(True, message) - Node removed successfully
-(False, error) - Operation failed
+Distributed KV Store with Raft Consensus
+Version: 1.0.0    Status: Production Ready
+Last Updated: December 2025
 
-Example:
-pythonsuccess, msg = node.remove_node("node2")
-get_status() → dict
-Get detailed node status and cluster information.
-Returns: Dictionary with keys:
+API Reference
+=============
 
-node_id: This node's identifier
-state: "leader", "follower", or "candidate"
-term: Current election term
-log_length: Number of log entries
-commit_index: Last committed index
-last_applied: Last applied index
-snapshot: Snapshot metadata (if exists)
-kv_store_size: Number of key-value pairs
-peers: Connected peer information
+remove_node(node_id: str) -> tuple[bool, str]
+    Remove a node from the cluster (leader only).
 
-Example:
-pythonstatus = node.get_status()
-print(f"Node is {status['state']} in term {status['term']}")
-get_metrics() → dict
-Get performance metrics for monitoring.
-Returns: Dictionary with metrics for monitoring systems
+    Parameters:
+        node_id: Identifier of node to remove
 
-🤝 Contributing
-Contributions are welcome! Please follow these guidelines:
-Development Process
+    Returns:
+        (True, message)  - Node removed successfully
+        (False, error)   - Operation failed
 
-Fork the repository
+    Example:
+        success, msg = node.remove_node("node2")
+        print(msg)
 
-bash   git fork https://github.com/vatsal9117/distributed-kv-store
 
-Create a feature branch
+get_status() -> dict
+    Get detailed node status and cluster information.
 
-bash   git checkout -b feature/amazing-feature
+    Returns: Dictionary with keys
+        node_id         - This node's identifier
+        state           - "leader", "follower" or "candidate"
+        term            - Current election term
+        log_length      - Number of log entries
+        commit_index    - Last committed index
+        last_applied    - Last applied index
+        snapshot        - Snapshot metadata (if exists)
+        kv_store_size   - Number of key-value pairs
+        peers           - Connected peer information
 
-Make changes and test
+    Example:
+        status = node.get_status()
+        print(f"Node is {status['state']} in term {status['term']}")
 
-bash   # Run test suite
+
+get_metrics() -> dict
+    Get performance metrics for monitoring systems.
+    Returns: Dictionary with monitoring metrics
+
+
+Contributing
+============
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repo
+   git fork https://github.com/vatsal9117/distributed-kv-store
+
+2. Create feature branch
+   git checkout -b feature/amazing-feature
+
+3. Make changes and run tests
    python benchmark_and_test.py
-   
-   # Verify all tests pass
 
-Commit with clear messages
+4. Commit with clear message
+   git commit -m "Add amazing feature: detailed description"
 
-bash   git commit -m 'Add amazing feature: detailed description'
+5. Push and open Pull Request
+   git push origin feature/amazing-feature
 
-Push and create Pull Request
-
-bash   git push origin feature/amazing-feature
 Code Style
-
-Follow PEP 8 style guide
-Add docstrings to all public methods
-Include type hints where possible
-Write tests for new features
-Update documentation for API changes
+- Follow PEP 8
+- Add docstrings to all public methods
+- Use type hints
+- Write tests for new features
+- Update docs on API changes
 
 Testing Requirements
-All contributions must:
-
-✅ Pass existing test suite
-✅ Add tests for new features
-✅ Maintain or improve code coverage
-✅ Pass lint checks
+- Pass all existing tests
+- Add tests for new features
+- Maintain or improve coverage
+- Pass lint checks
 
 
-📄 License
-This project is licensed under the MIT License.
-textMIT License
+License
+=======
+MIT License
 
 Copyright (c) 2024 Vatsal
 
@@ -1094,8 +1101,8 @@ Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+copies of the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
@@ -1108,60 +1115,30 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-🎓 Learning Resources
-Understanding Raft Consensus
-Essential Reading:
 
-📄 Raft Paper - Original paper by Diego Ongaro
-🎥 Raft Lecture (MIT 6.824) - Excellent video explanation
-🌐 Raft Visualization - Interactive demo
-
-Advanced Topics:
-
-📖 Raft Refloated - Detailed analysis
-📚 Distributed Systems (Maarten van Steen) - Textbook
+Learning Resources
+==================
+Essential Raft Reading
+- Raft Paper              https://raft.github.io/raft.pdf
+- MIT 6.824 Raft Lecture   https://www.youtube.com/watch?v=YbZ3zDzD2nk
+- Interactive Raft Demo    https://thesecretlivesofdata.com/raft/
 
 Related Projects
-Production Implementations:
-
-etcd - Raft in Go (Kubernetes uses this)
-Consul - Service mesh with Raft
-CockroachDB - Distributed SQL
-
-Educational:
-
-Raft Scope - Visualization tool
-MIT 6.824 Labs - Build your own Raft
+- etcd (Go)         - Used by Kubernetes
+- Consul            - Service mesh with Raft
+- CockroachDB       - Distributed SQL
+- MIT 6.824 Labs    - Build your own Raft
 
 
-📞 Contact & Support
+Contact & Support
+=================
+Author : Vatsal
+GitHub : @vatsal9117
+Repo   : https://github.com/vatsal9117/distributed-kv-store
 
-Author: Vatsal
-GitHub: @vatsal9117
-Project: distributed-kv-store
-Issues: Report bugs
+Having issues? Check docs -> search issues -> open new issue with logs
 
-Getting Help
+Star this repo if you find it useful!
 
-Check the documentation - Most questions are answered here
-Search existing issues - Someone may have had the same problem
-Create a new issue - Provide logs and reproduction steps
-Join discussions - Share your experience and learn from others
-
-
-<p align="center">
-  <b>⭐ Star this repo if you find it useful!</b><br>
-  <sub>Built with passion for distributed systems</sub>
-</p>
-<p align="center">
-  <a href="#-quick-start">Quick Start</a> •
-  <a href="#-testing--benchmarking">Testing</a> •
-  <a href="#-architecture-deep-dive">Architecture</a> •
-  <a href="#-api-reference">API</a> •
-  <a href="#-contributing">Contributing</a>
-</p>
-
-Last Updated: December 2025
-Version: 1.0.0
-Status: Production Ready ✨
-</parameter>
+Built with passion for distributed systems
+Quick Start • Testing • Architecture • API • Contributing
